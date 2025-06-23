@@ -1,53 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import logo from "./logo.svg";
+import "./App.css";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 function App() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleForm = () => {
-    navigate("/userProfile")
-  }
+  const signUp = () => {
+    navigate("/userProfile");
+  };
 
   return (
-    <div className="landing-page">
-      {/* Navigation Bar */}
-      <nav className="navbar">
-        <div className="navbar-logo">Tap Talk AI</div>
-        <div className="navbar-links">
-          <a href="#">Home</a>
-          <a href="#">Connections</a>
-        </div>
-        <div className="navbar-auth">
-          <a href="#">Profile</a>
-          <a href="#">SignIn</a>
-        </div>
-      </nav>
-
-      {/* Welcome Message */}
-      <div className="welcome">
-        <h1>Hello Aayushi</h1>
-        <p>Have a great connected experience!</p>
-      </div>
-
-      {/* Action Links */}
-      <div className="action-links">
-        <button href="#">Qr Scanner</button>
-        <button href="#">Add User</button>
-        <button onClick={handleForm}>Form</button>
-      </div>
-
-      {/* Connection Stats */}
-      <div className="stats">
-        <div className="stats-box">
-          <h2>Connections</h2>
-          <p>Today's Count</p>
-        </div>
-
-        <div className="stats-box">
-          <h2>Recent Connections</h2>
-          {/* Recent connections can be dynamically inserted here */}
-        </div>
+    <div className="app-page">
+      <header className="header">
+        <h1>TapTalk AI</h1>
+      </header>
+      <div className="auth-options">
+        <button className="auth-button" onClick={signUp}>Sign Up</button>
+        <button className="auth-button">Sign In</button>
       </div>
     </div>
   );

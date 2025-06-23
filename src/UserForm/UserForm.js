@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { QRCodeCanvas } from 'qrcode.react';
 import "./UserForm.css";
+import { useNavigate } from "react-router-dom";
 
 export default function UserForm() {
   const [form, setForm] = useState({
@@ -14,6 +15,8 @@ export default function UserForm() {
     jobTitle: "",
     photo: null
   });
+
+  const navigate = useNavigate();
 
   // Store a locally generated object-URL for preview
   const [photoPreview, setPhotoPreview] = useState(null);
@@ -28,6 +31,10 @@ export default function UserForm() {
     } else {
       setForm((f) => ({ ...f, [name]: value }));
     }
+  };
+
+  const saveProfile = (e) => {
+    navigate("/landing")
   };
 
    return (
@@ -159,7 +166,7 @@ export default function UserForm() {
             </div>
           )}
 
-          <button type="submit" className="submit-btn">
+          <button onClick={saveProfile} type="submit" className="submit-btn">
             Save Profile
           </button>
         </form>
