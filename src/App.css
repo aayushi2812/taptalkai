@@ -1,7 +1,5 @@
 .landing-page {
   min-height: 100vh;
-  background-color: black;
-  color: white;
   font-family: sans-serif;
   padding: 24px;
 }
@@ -22,7 +20,6 @@
 .navbar-auth a {
   margin: 0 12px;
   text-decoration: none;
-  color: white;
 }
 
 .navbar-links a:hover,
@@ -50,7 +47,7 @@
 }
 
 .stats-box {
-  border: 1px solid #00bfff;
+  border: 1px solid #90D1CA;
   border-radius: 10px;
   padding: 24px;
 }
