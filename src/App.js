@@ -1,12 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate()
+
+  const handleForm = () => {
+    navigate("/form")
+  }
+
   return (
     <div className="App">
       <h1>Tap Talk AI</h1>
-      <Link to='/form'>Form</Link>
+      <button onClick={handleForm}>Form</button>
     </div>
   );
 }
