@@ -27,6 +27,11 @@ const connectionsData = [
     name: "Aayushi",
     event: "Women in Tech",
     descriptionLink: "#"
+  },
+  {
+    name: "Aayushi",
+    event: "Women in Tech",
+    descriptionLink: "#"
   }
 ];
 
@@ -40,7 +45,7 @@ function Connections() {
 
   return (
     <div>
-      <p className="heading">Connections</p>
+      {/* <p className="heading">Connections</p> */}
       <Container>
         <Row>
           {connectionsData.map((connection, index) => (

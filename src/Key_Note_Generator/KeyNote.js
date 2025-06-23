@@ -227,7 +227,8 @@ const Keynotes = () => {
           disabled={isGenerating || !transcript.trim()}
         >
           {isGenerating ? '⏳ Generating Notes...' : '✨ Generate AI Notes'}
-        </button>
+        </button><br/>
+        <br />
         <textarea
           className="keynotes-textarea notes"
           value={notes}
