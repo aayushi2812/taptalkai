@@ -2,9 +2,12 @@ import logo from "./logo.svg";
 import "./Landing.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import Connections from "./Connections";
 
 function Landing() {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
 
   const handleForm = () => {
     navigate("/userProfile");
@@ -21,6 +24,13 @@ function Landing() {
   const handleQRReader = () => {
     navigate("/qrscanner");
   };
+   useEffect(() => {
+      const savedUser = localStorage.getItem("user");
+      if (savedUser) {
+        const userObj = JSON.parse(savedUser);
+        setUserName(userObj.name || "User");
+      }
+    }, []);
 
   return (
     <div className="landing-page">
@@ -37,7 +47,7 @@ function Landing() {
 
       {/* Welcome Message */}
       <div className="welcome">
-        <h1>Hello Aayushi</h1>
+        <h1>Hello {userName}!</h1>
         <p>Have a great connected experience!</p>
       </div>
 
