@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function App() {
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ function App() {
         <h1>TapTalk AI</h1>
       </header>
       <div className="auth-options">
-        <button className="auth-button" onClick={signUp}>Sign Up</button>
-        <button className="auth-button">Sign In</button>
+        <Button className="auth-button" onClick={signUp}>Sign Up</Button>
+        <Button className="auth-button">Sign In</Button>
       </div>
     </div>
   );

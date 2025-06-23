@@ -9,7 +9,12 @@ function Landing() {
 
   const handleForm = () => {
     navigate("/userProfile");
+    
   };
+   const handleKeynote = () => {
+    navigate("/keynotes");
+  };
+
 
     const handleConnections = () => {
     navigate("/connections");
@@ -36,6 +41,10 @@ function Landing() {
       <div className="welcome">
         <h1>Hello Aayushi</h1>
         <p>Have a great connected experience!</p>
+      </div>
+      
+      <div className="Keynote">
+        <button onClick={handleKeynote}>Key Note</button>
       </div>
 
       {/* Action Links */}
