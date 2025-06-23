@@ -2,7 +2,6 @@ import logo from "./logo.svg";
 import "./Landing.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import Connections from "./Connections";
 
 function Landing() {
   const navigate = useNavigate();
@@ -13,6 +12,10 @@ function Landing() {
 
     const handleConnections = () => {
     navigate("/connections");
+  };
+
+  const handleAddConnection = () => {
+    navigate("/addConnection");
   };
 
   const handleQRReader = () => {
@@ -42,7 +45,7 @@ function Landing() {
       <Container className="container">
         <Row className="row">
           <Col className="col">
-            <Button className="button1" onClick={handleQRReader}>Scan QR code</Button>
+            <Button className="button1" onClick={handleAddConnection}>Add connection</Button>
           </Col>
           <Col className="col">
             <Button className="button1" onClick={handleConnections}>View Connections</Button>
