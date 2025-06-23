@@ -1,5 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import "./Connections.css";
+import { useNavigate } from "react-router-dom";
 
 const connectionsData = [
   {
@@ -30,6 +31,13 @@ const connectionsData = [
 ];
 
 function Connections() {
+
+    const navigate = useNavigate();
+
+    function userProfile(){
+        navigate("/userDetails")
+    }
+
   return (
     <div>
       <p className="heading">Connections</p>
@@ -41,7 +49,7 @@ function Connections() {
                 <Card.Body>
                   <Card.Title>{connection.name}</Card.Title>
                   <Card.Text>Event: {connection.event}</Card.Text>
-                  <Card.Link href={connection.descriptionLink}>View Description</Card.Link>
+                  <Card.Link onClick={userProfile}>View Description</Card.Link>
                 </Card.Body>
               </Card>
             </Col>

@@ -8,6 +8,7 @@ import UserForm from './UserForm/UserForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Landing from './Landing';
 import Connections from './Connections';
+import QRScanner from './QRScanner';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,8 +18,8 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/landing" element={<Landing />} />
       <Route path='/userProfile' element={<UserForm />} />
-      <Route path='/connections' element={<Connections
-       />} />
+      <Route path='/connections' element={<Connections />} />
+      <Route path='/qrscanner' element={<QRScanner />} />
     </Routes>
     </BrowserRouter>
     
