@@ -34,6 +34,7 @@
 
 /* Text inputs */
 .profile-form input[type="text"],
+.profile-form input[type="tel"],
 .profile-form input[type="email"] {
   padding: 0.65rem 0.75rem;
   border: 1px solid #ccc;

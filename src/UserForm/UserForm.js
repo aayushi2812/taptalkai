@@ -8,6 +8,10 @@ export default function UserForm() {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
+     phone: "",
+    companyName: "",
+    linkedIn: "",
+    jobTitle: "",
     photo: null
   });
 
@@ -50,6 +54,7 @@ export default function UserForm() {
             />
           </label>
 
+
           {/* Email */}
           <label>
             Email
@@ -62,6 +67,68 @@ export default function UserForm() {
               required
             />
           </label>
+           {/* Company name */}
+                    <label>
+                      Company Name
+                      <input
+                        type="text"
+                        name="companyName"
+                        placeholder="xyz"
+                        value={form.companyName}
+                        onChange={handleChange}
+
+                      />
+                    </label>
+                     {/* Job Title */}
+                              <label>
+                                Job Title
+                                <input
+                                  type="text"
+                                  name="jobTitle"
+                                  placeholder="Developer"
+                                  value={form.jobTitle}
+                                  onChange={handleChange}
+
+                                />
+                              </label>
+                               {/* LinkedIn */}
+                                                            <label>
+                                                              Linked In
+                                                              <input
+                                                                type="text"
+                                                                name="linkedIn"
+                                                                placeholder="https://www.linkedin.com/in/abc/"
+                                                                value={form.linkedIn}
+                                                                onChange={handleChange}
+
+                                                              />
+                                                            </label>
+          {/* Phone Number */}
+                                       <label>
+                                         Phone Number
+                                         <input
+                                            type="tel"
+                                           name="phone"
+                                           placeholder="+1 234 567 8900"
+                                           value={form.phone}
+                                           onChange={handleChange}
+
+                                         />
+                                       </label>
+
+          {/* Bio Section */}
+                  <div className="bio-section slide-in">
+                    <label>
+                      Personal Bio
+                      <textarea
+                        name="bio"
+                        rows="4"
+                        placeholder="Write a short bio about yourself..."
+                        value={form.bio}
+                        onChange={handleChange}
+                      />
+                    </label>
+                  </div>
 
           {/* Profile photo */}
           <label className="file-label">
@@ -82,10 +149,10 @@ export default function UserForm() {
           )}
 
           {/* QR code generated from full name + email */}
-          {form.fullName && form.email && (
+          {form.email && (
             <div className="qr zoom-in">
               <QRCodeCanvas
-                value={`${form.fullName}|${form.email}`}
+                value={`${form.email}`}
                 size={128}
                 includeMargin
               />
