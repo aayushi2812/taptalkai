@@ -2,10 +2,12 @@ import logo from "./logo.svg";
 import "./Landing.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import Connections from "./Connections";
 
 function Landing() {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
 
   const handleForm = () => {
     navigate("/userProfile");
@@ -20,9 +22,20 @@ function Landing() {
     navigate("/connections");
   };
 
+  const handleAddConnection = () => {
+    navigate("/addConnection");
+  };
+
   const handleQRReader = () => {
     navigate("/qrscanner");
   };
+   useEffect(() => {
+      const savedUser = localStorage.getItem("user");
+      if (savedUser) {
+        const userObj = JSON.parse(savedUser);
+        setUserName(userObj.name || "User");
+      }
+    }, []);
 
   return (
     <div className="landing-page">
@@ -39,7 +52,7 @@ function Landing() {
 
       {/* Welcome Message */}
       <div className="welcome">
-        <h1>Hello Aayushi</h1>
+        <h1>Hello {userName}!</h1>
         <p>Have a great connected experience!</p>
       </div>
       
@@ -51,7 +64,7 @@ function Landing() {
       <Container className="container">
         <Row className="row">
           <Col className="col">
-            <Button className="button1" onClick={handleQRReader}>Scan QR code</Button>
+            <Button className="button1" onClick={handleAddConnection}>Add connection</Button>
           </Col>
           <Col className="col">
             <Button className="button1" onClick={handleConnections}>View Connections</Button>

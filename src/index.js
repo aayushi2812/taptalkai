@@ -10,6 +10,7 @@ import Landing from './Landing';
 import Connections from './Connections';
 import QRScanner from './QRScanner';
 import Keynotes from './Key_Note_Generator/KeyNote';
+import AddConnection from './AddConnection';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
       <Route path='/connections' element={<Connections />} />
       <Route path='/qrscanner' element={<QRScanner />} />
       <Route path='/keynotes' element={<Keynotes />} />
+      <Route path='/addConnection' element={<AddConnection />} />
     </Routes>
     </BrowserRouter>
     
